@@ -1,0 +1,134 @@
+:root {
+  --ps-bg-main: #162e21; 
+  --ps-bg-deep: #0a1a12;
+  --ps-gold: #d4af37;
+  --ps-cream: #f4ebd0;
+  --ps-border: rgba(212, 175, 55, 0.2);
+}
+
+.poseidon-footer {
+  width: 100%;
+  padding: 80px 8% 30px 8%;
+  background: radial-gradient(circle at center, var(--ps-bg-main), var(--ps-bg-deep));
+  color: var(--ps-cream);
+  border-top: 1px solid var(--ps-border);
+  box-sizing: border-box;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr; /* Balanced 3-column layout */
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.footer-label {
+  color: var(--ps-gold);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Compliance Column */
+.gst-no {
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--ps-gold);
+}
+
+.compliance-line {
+  width: 40px;
+  height: 2px;
+  background: var(--ps-gold);
+  margin-top: 20px;
+}
+
+/* Links Column */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: var(--ps-cream);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-column ul li a:hover {
+  color: var(--ps-gold);
+  opacity: 1;
+}
+
+/* Contact Column */
+.contact p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact a {
+  color: var(--ps-cream);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  color: var(--ps-gold);
+  border-color: var(--ps-gold);
+}
+
+/* BOTTOM BAR */
+.footer-bottom-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.developer-credit {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.developer-credit a {
+  color: var(--ps-gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.copyright-text {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Laptop Responsive Fix */
+@media (max-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .compliance-line { margin: 20px auto; }
+  .footer-bottom-bar { flex-direction: column; gap: 15px; }
+}

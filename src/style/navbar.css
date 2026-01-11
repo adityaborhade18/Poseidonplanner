@@ -1,0 +1,75 @@
+/* Ensure these variables match your main theme */
+:root {
+  --nav-bg: #0a1a12;
+  --gold: #d4af37;
+  --cream: #f4ebd0;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 85px;
+  background-color: var(--nav-bg) !important;
+  display: flex !important;
+  justify-content: center;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 40px;
+}
+
+/* --- LOGO ALIGNMENT --- */
+.nav-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important; /* Space between JPG and Text */
+}
+
+.logo-wrapper {
+  width: 50px !important;
+  height: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain; /* Keeps JPG from stretching */
+  display: block;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+/* --- LINKS --- */
+.nav-links {
+  display: flex !important;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--cream);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}

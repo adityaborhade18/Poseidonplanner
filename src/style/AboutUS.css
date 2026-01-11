@@ -1,0 +1,164 @@
+:root {
+  /* Unified Lighter Forest Green Palette */
+  --ps-bg-main: #162e21;      /* Center spotlight color */
+  --ps-bg-deep: #0a1a12;      /* Outer edge color */
+  --ps-gold: #d4af37;
+  --ps-gold-muted: rgba(212, 175, 55, 0.2);
+  --ps-cream: #f4ebd0;
+  --ps-border: rgba(212, 175, 55, 0.4); /* Stronger gold border for elements */
+}
+
+.poseidon-full-layout {
+  width: 100%;
+  padding: 100px 5%;
+  /* Applying the professional depth gradient from the Advisor section */
+  background: radial-gradient(
+    circle at center, 
+    var(--ps-bg-main) 0%, 
+    var(--ps-bg-deep) 100%
+  );
+  color: var(--ps-cream);
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.detail-section {
+  max-width: 1200px;
+  margin: 0 auto 120px auto;
+}
+
+.premium-topic {
+  color: var(--ps-gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; /* Matched to Advisor title size */
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* --- FORMAL TABLE WITH LINES --- */
+.table-boundary {
+  width: 100%;
+  overflow-x: auto;
+  border: 2px solid var(--ps-gold); 
+  background: rgba(0, 0, 0, 0.3); /* Darkened for better text contrast */
+  border-radius: 4px;
+}
+
+.formal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.formal-table th, .formal-table td {
+  border: 1px solid var(--ps-border); 
+  padding: 25px;
+  text-align: left;
+}
+
+.formal-table th {
+  background: var(--ps-gold);
+  color: var(--ps-bg-deep); /* Text on gold should be dark */
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.text-gold { color: var(--ps-gold); font-weight: bold; }
+.text-center { text-align: center; }
+.fee-primary { font-size: 1.4rem; font-weight: 800; color: #fff; }
+.fee-divider { color: var(--ps-gold); font-size: 0.9rem; margin: 10px 0; font-weight: bold; }
+.sub-detail { font-size: 0.85rem; color: var(--ps-cream); opacity: 0.7; margin-top: 8px; }
+
+/* --- PHILOSOPHY UI (Glassmorphism) --- */
+.philosophy-bespoke-container {
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.05); /* Matched Glassmorphism from Advisor Section */
+  backdrop-filter: blur(10px);
+  border-top: 4px solid var(--ps-gold);
+  border-right: 1px solid var(--ps-gold-muted);
+  border-bottom: 1px solid var(--ps-gold-muted);
+  border-left: 1px solid var(--ps-gold-muted);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.philosophy-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 50px;
+  color: var(--ps-gold);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.pillar-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--ps-gold);
+  margin-top: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--ps-gold); /* Slight glow for a premium feel */
+}
+
+/* --- EXPERTISE CARDS WITH HOVER --- */
+.expertise-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.expertise-card-pro {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ps-border);
+  padding: 45px 35px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 8px;
+}
+
+/* HOVER EFFECT */
+.expertise-card-pro:hover {
+  background: rgba(212, 175, 55, 0.1); /* Gold tint on hover */
+  transform: translateY(-12px);
+  border-color: var(--ps-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--ps-gold);
+  transition: 0.5s ease-in-out;
+  border-radius: 8px 8px 0 0;
+}
+
+.expertise-card-pro:hover .card-top-accent {
+  width: 100%;
+}
+
+.card-icon {
+  color: var(--ps-gold);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.card-text { 
+  font-size: 1.15rem; 
+  line-height: 1.7; 
+  color: var(--ps-cream); 
+}
+
+@media (max-width: 768px) {
+  .premium-topic { font-size: 2.2rem; }
+  .philosophy-bespoke-container { padding: 30px; }
+  .philosophy-quote { font-size: 1.5rem; }
+}

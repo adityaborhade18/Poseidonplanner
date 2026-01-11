@@ -1,0 +1,128 @@
+:root {
+  --ps-bg-main: #162e21; 
+  --ps-bg-deep: #0a1a12;
+  --ps-gold: #d4af37;
+  --ps-cream: #f4ebd0;
+  --ps-border: rgba(212, 175, 55, 0.4);
+}
+
+.poseidon-footer-wrap {
+  width: 100%;
+  padding: 80px 20px; /* Reduced side padding for laptop safety */
+  background: radial-gradient(circle at center, var(--ps-bg-main), var(--ps-bg-deep));
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box; /* Critical: keeps padding inside width */
+  overflow: hidden;
+}
+
+.contact-card-container {
+  width: 100%;
+  max-width: 450px; /* Constrains card size to fit any laptop */
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--ps-border);
+  padding: 50px 30px;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* IDENTITY STYLING */
+.advisor-name-primary {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; /* Scaled for laptop displays */
+  color: var(--ps-gold);
+  margin-bottom: 5px;
+}
+
+.advisor-credential {
+  color: var(--ps-cream);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.divider-gold {
+  width: 40px;
+  height: 2px;
+  background: var(--ps-gold);
+  margin: 25px auto;
+}
+
+/* CHANNELS STYLING */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.channel-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-align: left;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(212, 175, 55, 0.03);
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.channel-link:not(.static):hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--ps-gold);
+  transform: scale(1.02);
+}
+
+.channel-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ps-gold);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--ps-gold);
+  font-size: 1rem;
+}
+
+.channel-info small {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--ps-gold);
+  letter-spacing: 1px;
+}
+
+.channel-info span {
+  color: var(--ps-cream);
+  font-size: 0.95rem;
+  word-break: break-all; /* Safety for long emails */
+}
+
+/* FOOTER BRANDING */
+.footer-signature {
+  border-top: 1px solid var(--ps-border);
+  padding-top: 25px;
+}
+
+.footer-signature p {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--ps-gold);
+  margin-bottom: 5px;
+}
+
+.footer-signature small {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  color: var(--ps-cream);
+}
+
+/* Tablet/Mobile Adjustments */
+@media (max-width: 480px) {
+  .contact-card-container { padding: 30px 20px; }
+  .advisor-name-primary { font-size: 1.5rem; }
+}
