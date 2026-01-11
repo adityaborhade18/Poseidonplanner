@@ -1,75 +1,125 @@
-/* Ensure these variables match your main theme */
 :root {
-  --nav-bg: #0a1a12;
-  --gold: #d4af37;
-  --cream: #f4ebd0;
+  --ps-nav-bg: #0a1a12;
+  --ps-gold: #d4af37;
+  --ps-cream: #f4ebd0;
 }
 
+/* --- DESKTOP: IN-LINE NAVBAR --- */
 .navbar {
-  position: fixed !important;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100% !important;
+  width: 100%;
   height: 85px;
-  background-color: var(--nav-bg) !important;
-  display: flex !important;
+  background: var(--ps-nav-bg);
+  display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .nav-container {
   width: 100%;
-  max-width: 1200px;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 0 40px;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
 }
 
-/* --- LOGO ALIGNMENT --- */
 .nav-brand {
-  display: flex !important;
-  align-items: center !important;
-  gap: 15px !important; /* Space between JPG and Text */
-}
-
-.logo-wrapper {
-  width: 50px !important;
-  height: 50px !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
 .nav-logo-img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain; /* Keeps JPG from stretching */
-  display: block;
+  height: 45px;
+  width: auto;
 }
 
 .logo-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--ps-gold);
   letter-spacing: 3px;
 }
 
-/* --- LINKS --- */
+/* Desktop Horizontal Links */
 .nav-links {
-  display: flex !important;
+  display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
   margin: 0;
-  padding: 0;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: var(--cream);
-  text-transform: uppercase;
+  color: var(--ps-cream);
   font-size: 0.85rem;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--ps-gold);
+}
+
+.nav-cta a {
+  border: 1px solid var(--ps-gold);
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.nav-toggle {
+  display: none; /* Hidden on Desktop */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-toggle .bar {
+  width: 28px;
+  height: 2px;
+  background: var(--ps-gold);
+  transition: 0.4s;
+}
+
+/* --- MOBILE: SIDE DRAWER (Below 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .nav-toggle {
+    display: flex; /* Show Hamburger */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 280px;  /* Side Drawer width */
+    height: 100vh;
+    background: var(--ps-nav-bg);
+    flex-direction: column; /* Vertical links */
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    border-left: 1px solid var(--ps-gold);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.open {
+    right: 0; /* Slide in from side */
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+
+  /* Hamburger to X Transformation */
+  .nav-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
