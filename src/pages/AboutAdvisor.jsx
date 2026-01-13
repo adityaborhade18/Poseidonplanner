@@ -4,7 +4,7 @@ import myphoto from '../assets/myphoto.png'; // Make sure the path is correct
 
 const AboutAdvisor = () => {
   return (
-    <section className="advisor-section">
+    <section id="about-advisor" className="advisor-section">
       <div className="advisor-container">
         
         {/* LEFT SIDE: PROFESSIONAL IMAGE */}

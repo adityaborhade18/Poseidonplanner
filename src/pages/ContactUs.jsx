@@ -3,9 +3,9 @@ import '../style/ContactUs.css';
 
 const ContactFooter = () => {
   return (
-    <footer className="poseidon-footer-wrap">
+    <footer id="contact" className="poseidon-footer-wrap">
       <div className="contact-card-container">
-        
+
         {/* EXECUTIVE HEADER */}
         <div className="card-identity">
           <h2 className="advisor-name-primary">Atharva Abhijeet Chitale</h2>
@@ -15,7 +15,7 @@ const ContactFooter = () => {
 
         {/* INTERACTIVE CONTACT CHANNELS */}
         <div className="contact-channels">
-          
+
           <a href="mailto:planpotentia@gmail.com" className="channel-link">
             <span className="channel-icon">✉</span>
             <div className="channel-info">

@@ -12,8 +12,8 @@ const ProfessionalDetails = () => {
   ];
 
   return (
-    <div className="poseidon-full-layout">
-      
+    <div id="about-us" className="poseidon-full-layout">
+
       {/* --- SECTION 1: FEES & CHARGES (Formal Table) --- */}
       <section className="detail-section">
         <h2 className="premium-topic">Fees & Charges</h2>
@@ -39,7 +39,7 @@ const ProfessionalDetails = () => {
                   <div className="sub-detail">(Time Frame &lt; 1.5 Years)</div>
                 </td>
                 <td>
-                  Investment consultancy across Financial & Non-Financial Asset Classes. 
+                  Investment consultancy across Financial & Non-Financial Asset Classes.
                   Fees regulated under SEBI (Investment Advisers) Regulations.
                 </td>
               </tr>
